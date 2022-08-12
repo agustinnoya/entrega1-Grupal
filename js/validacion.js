@@ -4,24 +4,24 @@ function showAlertSuccess() {
 
 function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
+}
+
+function register() {
+
+    let pw1 = document.getElementById("password1").value;
+    let pw2 = document.getElementById("password2").value;
+    let name = document.getElementById("nombre").value;
+    let surname = document.getElementById("apellido").value;
+    let checkbox = document.getElementById("terminos");
+    let email = document.getElementById("email").value;
+
+
+    if ((pw1.length < 6) || (pw1 != pw2) || (name.length < 1) || (surname.length < 1) || (email.length < 1) || (checkbox.checked == false)) {
+        return showAlertError();
+    } else {
+        return showAlertSuccess();
+    }
 
 }
-console.log(2)
-document.getElementById("regBtn").addEventListener("click", () => {
 
-console.log(3)
-    let nombre = document.getElementById("nombre").value
-    let apellido = document.getElementById("apellido").value
-    let email = document.getElementById("email").value
-    let terminos = docuemnt.getElementById("terminos").checked
-    let contraseña = document.getElementById("password1").value
-    let contraseñados = document.getElementById("password2").value
-
-    if ((contraseña.length > 5 && contraseña == contraseñados && nombre > 0 && apellido > 0 && email > 0 && terminos.checked == true)) {
-         showAlertSuccess()
-    } else {
-         showAlertError()
-    }
-    console.log(4)
-})
-
+document.getElementById("regBtn").addEventListener("click", () => { register() });
