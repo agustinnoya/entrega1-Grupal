@@ -1,12 +1,14 @@
 function showAlertSuccess() {
     document.getElementById("alert-success").classList.add("show");
+    setTimeout('document.location.reload()',3000);
 }
 
 function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
+    setTimeout('document.location.reload()',3000);
 }
 
-function register() {
+document.getElementById("regBtn").addEventListener("click", () => {
 
     let pw1 = document.getElementById("password1").value;
     let pw2 = document.getElementById("password2").value;
@@ -22,6 +24,4 @@ function register() {
         return showAlertSuccess();
     }
 
-}
-
-document.getElementById("regBtn").addEventListener("click", () => { register() });
+});
