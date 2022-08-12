@@ -24,4 +24,4 @@ document.getElementById("regBtn").addEventListener("click", () => {
         return showAlertSuccess();
     }
 
-}
+});
